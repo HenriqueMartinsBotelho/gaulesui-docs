@@ -11,7 +11,7 @@
   "author": "Henrique Martins Botelho",
   "license": "MIT",
   "dependencies": {
-    "gaulesui_lib": "^0.1.1",
+    "gaulesui_lib": "^0.1.3",
     "next": "^12.1.0",
     "nextra": "^1.1.0",
     "nextra-theme-docs": "^1.2.2",
