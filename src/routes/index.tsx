@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { ButtonPage } from "../pages";
 import { Dashboard } from "../pages/dashboard/Dashboard";
 import { useDrawerContext } from "../shared/contexts";
 
@@ -13,6 +14,11 @@ export const AppRoutes = () => {
         icon: 'house',
         path: '/pagina-inicial'
       },
+      {
+        label: 'Button',
+        icon: 'smart_button',
+        path: '/button-page'
+      },
     
     ])
   }, [])
@@ -25,6 +31,7 @@ export const AppRoutes = () => {
           <Dashboard/>
         }
       />
+      <Route path="/button-page" element={<ButtonPage />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

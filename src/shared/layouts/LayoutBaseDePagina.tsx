@@ -27,7 +27,7 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDepaginaProps> = ({
   const { toggleDrawerOpen } = useDrawerContext();
 
   return (
-    <Box height="100%" display="flex" flexDirection="column" gap={1}>
+    <Box height="100%" display="flex" flexDirection="column" gap={1} padding={2}>
       <Box
         padding={1}
         display="flex"
