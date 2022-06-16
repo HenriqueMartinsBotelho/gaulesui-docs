@@ -3,6 +3,7 @@ import { AppThemeProvider } from "./shared/contexts/ThemeContext";
 import { AppRoutes } from "./routes";
 import { MenuLateral } from "./shared/components";
 import { DrawerProvider } from "./shared/contexts";
+import './global.css'
 
 const App = () => {
   return (
