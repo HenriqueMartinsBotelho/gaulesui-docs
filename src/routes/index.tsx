@@ -21,7 +21,7 @@ export const AppRoutes = () => {
       },
       {
         label: 'Sliding Panel',
-        icon: 'smart_button',
+        icon: 'admin_panel_settings',
         path: '/slidingpanel-page'
       },
     

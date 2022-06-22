@@ -29,7 +29,7 @@ export const Page = () => {
 }`;
 
   return (
-    <LayoutBaseDePagina titulo="GaulesUI" barraDeFerramentas={<>🌳</>}>
+    <LayoutBaseDePagina titulo="GaulesUI" barraDeFerramentas={<></>}>
       <Box>
         <Box style={{ fontSize: "20px", marginBottom: "10px" }}>
           Exemplo de uso

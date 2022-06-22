@@ -31,6 +31,7 @@ const ListItemLink: React.FC<IListItemLinkProps> = ({
   const navigate = useNavigate();
   const resolvedPath = useResolvedPath(to);
   const match = useMatch({ path: resolvedPath.pathname, end: false });
+  const theme = useTheme()
 
   const handleClick = () => {
     navigate(to);
@@ -40,7 +41,7 @@ const ListItemLink: React.FC<IListItemLinkProps> = ({
   return (
     <ListItemButton selected={!!match} onClick={handleClick}>
       <ListItemIcon>
-        <Icon>{icon}</Icon>
+        <Icon style={{color: theme.palette.text.secondary}}>{icon}</Icon>
       </ListItemIcon>
       <ListItemText primary={label} />
     </ListItemButton>

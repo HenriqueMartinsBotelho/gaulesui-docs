@@ -1,16 +1,20 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { oneDark } from "@codemirror/theme-one-dark";
 import { FaGithub } from "react-icons/fa";
 
+
 export const Dashboard = () => {
+
+  const theme = useTheme();
+
   return (
     <LayoutBaseDePagina titulo="GaulesUI" barraDeFerramentas={<></>}>
       <Box>
         <Box
-          style={{ fontSize: "20px", marginBottom: "10px", color: "	#9900ff" }}
+          style={{ fontSize: "20px", marginBottom: "10px", color: theme.palette.text.primary }}
         >
           Introdução
         </Box>
@@ -54,7 +58,7 @@ export const Dashboard = () => {
       </Box>
       <Box style={{ marginTop: "20px" }}>
         <Box
-          style={{ fontSize: "20px", marginBottom: "10px", color: "	#9900ff" }}
+          style={{ fontSize: "20px", marginBottom: "10px",  color: theme.palette.text.primary }}
         >
           Instalação
         </Box>
@@ -70,7 +74,7 @@ export const Dashboard = () => {
       </Box>
       <Box style={{ marginTop: "30px" }}>
         <Box
-          style={{ fontSize: "20px", marginBottom: "10px", color: "	#9900ff" }}
+          style={{ fontSize: "20px", marginBottom: "10px",  color: theme.palette.text.primary }}
         >
           Nossos princípios
         </Box>
@@ -83,7 +87,7 @@ export const Dashboard = () => {
       </Box>
       <Box marginTop="30px">
         <Box
-          style={{ fontSize: "20px", marginBottom: "10px", color: "	#9900ff" }}
+          style={{ fontSize: "20px", marginBottom: "10px",  color: theme.palette.text.primary }}
         >
           Principais Tecnologias usadas
         </Box>
@@ -91,12 +95,12 @@ export const Dashboard = () => {
       </Box>
       <Box marginTop="30px">
         <Box
-          style={{ fontSize: "20px", marginBottom: "10px", color: "	#9900ff" }}
+          style={{ fontSize: "20px", marginBottom: "10px",  color: theme.palette.text.primary }}
         >
           Outros projetos
         </Box>
         Por favor, verifique alguns dos meus outros projetos em{" "}
-        <a style={{ color: "	#cc00ff" }} href="https://henriquembotelho.dev.br">
+        <a style={{  color: theme.palette.text.secondary }} href="https://henriquembotelho.dev.br">
           henriquembotelho.dev.br
         </a>
         . Sinta-se à vontade para deixar um comentário ou pergunta e
@@ -104,7 +108,7 @@ export const Dashboard = () => {
         <ol>
           <li>
             <a
-              style={{ color: "	#cc00ff" }}
+              style={{  color: theme.palette.text.secondary }}
               href="https://gosupercode.vercel.app/"
             >
               GoSuperCode
@@ -115,7 +119,7 @@ export const Dashboard = () => {
           </li>
           <li>
             <a
-              style={{ color: "	#cc00ff" }}
+              style={{  color: theme.palette.text.secondary }}
               href="https://algoclassic2.vercel.app/"
             >
               AlgoClassic
@@ -126,7 +130,7 @@ export const Dashboard = () => {
           </li>
           <li>
             <a
-              style={{ color: "	#cc00ff" }}
+              style={{  color: theme.palette.text.secondary }}
               href="https://langlearn-bice.vercel.app/"
             >
               LangLearn
@@ -137,7 +141,7 @@ export const Dashboard = () => {
           </li>
           <li>
             <a
-              style={{ color: "	#cc00ff" }}
+              style={{  color: theme.palette.text.secondary }}
               href="https://codeeditor-rose.vercel.app/"
             >
               CodeEditor
@@ -148,7 +152,7 @@ export const Dashboard = () => {
           </li>
           <li>
             <a
-              style={{ color: "	#cc00ff" }}
+              style={{  color: theme.palette.text.secondary }}
               href="https://github.com/HenriqueMartinsBotelho/code_performance"
             >
               CodePerformance
