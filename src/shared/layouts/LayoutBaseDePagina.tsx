@@ -27,13 +27,14 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDepaginaProps> = ({
   const { toggleDrawerOpen } = useDrawerContext();
 
   return (
-    <Box height="100%" display="flex" flexDirection="column" gap={1} padding={2}>
+    <Box height="100%" display="flex" flexDirection="column" gap={1} padding={2} style={{background:"#303134"}}>
       <Box
         padding={1}
         display="flex"
         alignItems="center"
         gap={1}
         height={theme.spacing(smDown ? 6 : mdDown ? 8 : 12)}
+        
       >
         {smDown && (
           <IconButton onClick={toggleDrawerOpen}>
@@ -45,7 +46,13 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDepaginaProps> = ({
         </Typography>
       </Box>
       {barraDeFerramentas && <Box>{barraDeFerramentas}</Box>}
-      <Box flex={1} overflow="auto">
+      <Box
+      width="90%"
+      margin="auto"
+      style={{ padding: '24px', 
+      boxShadow: "rgba(50, 50, 93, 0.85) 0px 50px 100px -20px, rgba(0, 0, 0, 0.6) 0px 30px 60px -30px, rgba(10, 37, 64, 0.95) 0px -2px 6px 0px inset",
+      borderRadius: "255px 15px 225px 15px/15px 225px 15px 255px"}}
+      flex={1} overflow="auto">
         {children}
       </Box>
     </Box>
