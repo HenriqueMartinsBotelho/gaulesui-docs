@@ -4,9 +4,21 @@ import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { oneDark } from "@codemirror/theme-one-dark";
 import { FaGithub } from "react-icons/fa";
-
+// import  {useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export const Dashboard = () => {
+  // const urlParams = new URLSearchParams(window.location.search);
+  
+
+  useEffect(() => {
+    // const token = urlParams.get('token')
+    // if(token){
+    //   localStorage.setItem('GitHubToken', token);
+    // }
+    console.log(document.cookie)
+  }, [])
+
 
   const theme = useTheme();
 
