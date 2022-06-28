@@ -1,7 +1,7 @@
 
-const local = false
+const local = true
 
-export const apiURL = local? 'http://localhost:3001' : 'https://apinodedomo.herokuapp.com'
+export const apiURL = local? 'http://localhost:9090' : 'https://apinodedomo.herokuapp.com'
 
 
 

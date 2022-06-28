@@ -3,12 +3,13 @@ import {
   getComments as getCommentsApi,
   createComment as createCommentApi,
   deleteComment as deleteCommentApi,
-  updateComment as updateCommentApi
+  updateComment as updateCommentApi,
 } from "./api";
 // import Comment from "./Comment/Comment";
 // import CommentForm from "./Comment/CommentForm";
-import {Comment, CommentForm} from "gaulesui_lib"
-
+import { Comment, CommentForm } from "gaulesui_lib";
+import axios from "axios";
+import { apiURL } from "../../src/constants/constants"
 
 export interface ICommentsProps {
   currentUserId: string;
@@ -24,6 +25,8 @@ const Comments = ({ currentUserId }: any) => {
     (backendComment: any) => backendComment.parentId === null
   );
   const getReplies = (commentId: any) => {
+    console.log(commentId);
+    console.log('raix', rootComments)
     return backendComments
       .filter((backendComment: any) => backendComment.parentId === commentId)
       .sort((a, b) => {
@@ -35,7 +38,7 @@ const Comments = ({ currentUserId }: any) => {
     console.log("addComment", text, parentId);
     createCommentApi(text, parentId).then((comment) => {
       setBackendComments([comment, ...backendComments]);
-      setActiveComment(null)
+      setActiveComment(null);
     });
   };
 
@@ -53,21 +56,35 @@ const Comments = ({ currentUserId }: any) => {
   const updateComment = (text, commentId) => {
     updateCommentApi(text, commentId).then(() => {
       const updateBackendComments = backendComments.map((backendComment) => {
-        if(backendComment.id === commentId) {
-          return {...backendComment, body: text}
+        if (backendComment.id === commentId) {
+          return { ...backendComment, body: text };
         }
-        return backendComment
-      })
-      setBackendComments(updateBackendComments)
-      setActiveComment(null)
-    })
-  }
+        return backendComment;
+      });
+      setBackendComments(updateBackendComments);
+      setActiveComment(null);
+    });
+  };
 
+  const getComments = async (id: string) => {
+    axios
+      .get(`${apiURL}/comments/section/${id}`)
+      .then((response) => {
+        console.log(response.data.comment.data);
+      setBackendComments(response.data.comment.data);
+
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
-    getCommentsApi().then((data: any) => {
-      setBackendComments(data);
-    });
+    // getCommentsApi().then((data: any) => {
+    //   console.log(data);
+    //   setBackendComments(data);
+    // });
+    getComments("62ba040573190e28887df980")
   }, []);
 
   return (
@@ -79,7 +96,7 @@ const Comments = ({ currentUserId }: any) => {
         {rootComments.map((rootComment: any) => (
           <Comment
             key={rootComment.id}
-            replies={getReplies(rootComment.id)}
+            replies={getReplies(rootComment.userId)}
             comment={rootComment}
             currentUserId={currentUserId}
             deleteComment={deleteComment}
