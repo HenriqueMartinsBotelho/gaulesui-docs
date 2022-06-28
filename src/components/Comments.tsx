@@ -9,7 +9,7 @@ import {
 // import CommentForm from "./Comment/CommentForm";
 import { Comment, CommentForm } from "gaulesui_lib";
 import axios from "axios";
-import { apiURL } from "../../src/constants/constants"
+import { apiURL } from "../../src/constants/constants";
 
 export interface ICommentsProps {
   currentUserId: string;
@@ -26,7 +26,7 @@ const Comments = ({ currentUserId }: any) => {
   );
   const getReplies = (commentId: any) => {
     console.log(commentId);
-    console.log('raix', rootComments)
+    console.log("raix", rootComments);
     return backendComments
       .filter((backendComment: any) => backendComment.parentId === commentId)
       .sort((a, b) => {
@@ -71,8 +71,7 @@ const Comments = ({ currentUserId }: any) => {
       .get(`${apiURL}/comments/section/${id}`)
       .then((response) => {
         console.log(response.data.comment.data);
-      setBackendComments(response.data.comment.data);
-
+        setBackendComments(response.data.comment.data);
       })
       .catch((error) => {
         console.log(error);
@@ -84,14 +83,17 @@ const Comments = ({ currentUserId }: any) => {
     //   console.log(data);
     //   setBackendComments(data);
     // });
-    getComments("62ba040573190e28887df980")
+    getComments("62ba040573190e28887df980");
   }, []);
 
   return (
     <div className="gau_comments">
-      <h3 className="gau_comments-title">Comment</h3>
-      <div className="gat_comment-form-title">Write comment</div>
-      <CommentForm submitLabel="Write" handleSubmit={addComment} />
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '14px'}}>
+        <div style={{fontSize: '30px'}}>Comentários</div>
+        <div>Sec: 62ba040573190e28887df980</div>
+      </div>
+      {/* <div className="gat_comment-form-title">Write comment</div> */}
+      <CommentForm submitLabel="Escrever" handleSubmit={addComment} />
       <div className="gau_comments-container">
         {rootComments.map((rootComment: any) => (
           <Comment
