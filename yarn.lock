@@ -4974,10 +4974,10 @@
   "resolved" "https://registry.npmjs.org/functions-have-names/-/functions-have-names-1.2.3.tgz"
   "version" "1.2.3"
 
-"gaulesui_lib@^0.1.19":
-  "integrity" "sha512-GaKG/nfwjjyByMW4gxa4EDLV49SzAZuRncQ6llapBlND1ubFblg1khpk8w+vNjrnO3/ujXSFQzUwuqZm6bKd/g=="
-  "resolved" "https://registry.npmjs.org/gaulesui_lib/-/gaulesui_lib-0.1.19.tgz"
-  "version" "0.1.19"
+"gaulesui_lib@^0.1.20":
+  "integrity" "sha512-2C1ZrdKltU5HikYJVUmElTk2gJALRMkAG5/f1l9QCB/l6iohjmzaElSoBgcWo+2QXLV64sLwE5wNkawMZG8zpg=="
+  "resolved" "https://registry.npmjs.org/gaulesui_lib/-/gaulesui_lib-0.1.20.tgz"
+  "version" "0.1.20"
   dependencies:
     "axios" "^0.27.2"
     "react-icons" "^4.4.0"
