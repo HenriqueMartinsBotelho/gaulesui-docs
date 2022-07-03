@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import Comments from "../../components/Comments";
 import { SlidingPanel } from "gaulesui_lib";
 import { oneDark } from "@codemirror/theme-one-dark";
 import fallen1 from "./../../shared/assets/fallen1.jpg";
@@ -79,7 +78,7 @@ export const Page = () => {
         />
       </Box>
       <Box>
-        <Comments currentUserId="1" />
+        {/* <Comments currentUserId="1" /> */}
       </Box>
     </LayoutBaseDePagina>
   );
