@@ -60,7 +60,7 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDepaginaProps> = ({
       flexDirection="column"
       gap={1}
       padding={2}
-      style={{ background: theme.palette.background.default }}
+      // style={{ background: theme.palette.primary[50] }}
     >
       <Box
         padding={1}

@@ -52,7 +52,7 @@ export const Dashboard = () => {
                     <Box display="flex" alignItems="center">
                       GitHub da Lib:&nbsp;
                       <a
-                        style={{ color: "#3FC7BF" }}
+                        style={{ color: "#377A74" }}
                         href="https://github.com/HenriqueMartinsBotelho/gaulesui_lib"
                       >
                         <FaGithub fontSize="40px" />
@@ -63,7 +63,7 @@ export const Dashboard = () => {
                     <Box display="flex" alignItems="center">
                       GitHub desse site:&nbsp;
                       <a
-                        style={{ color: "#3FC7BF" }}
+                        style={{ color: "#377A74" }}
                         href="https://github.com/HenriqueMartinsBotelho/gaulesui-docs"
                       >
                         <FaGithub fontSize="40px" />

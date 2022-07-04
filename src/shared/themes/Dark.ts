@@ -9,6 +9,8 @@ export const DarkTheme = createTheme({
       dark: yellow[800],
       light: yellow[500], 
       contrastText: '#ffffff',
+      50: '#377A74',
+      100: '#f7ece1',      
     },
     secondary: {
       main: cyan[500],
@@ -17,12 +19,13 @@ export const DarkTheme = createTheme({
       contrastText: '#ffffff',
     },
     background: {
-      paper: '#131325',
-      default: '#131015',
+      paper: '#725AC1',
+      default: '#242038',
+      
     },
     text: {
-      primary: '#4FD1C5',
-      secondary: '#3FC7BF',
+      primary: '#8D86C9',
+      secondary: '#cac4ce',
     }
     
   },

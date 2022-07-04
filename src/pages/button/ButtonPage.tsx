@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
@@ -13,18 +13,20 @@ import { v4 as uuidv4 } from "uuid";
 
 export const ButtonPage = () => {
   const code = `import React from 'react'
-import {Button} from "gaulesui_lib"
+  import {Button} from "gaulesui_lib"
+  
+  export const Page = () => {
+    return (
+      <Button label="Botão">Botão</Button>
+      )
+    }
+    `;
 
-export const Page = () => {
-  return (
-    <Button label="Botão">Botão</Button>
-  )
-}
-  `;
-
+  const theme = useTheme();
   const [comments, setComments] = useState<any>([]);
   const sectionId = "62bb4984bb18015a28a89df9";
   const [text, setText] = useState("");
+  const [status, setStatus] = useState(false);
 
   const getComments = async (id: string) => {
     axios
@@ -39,7 +41,7 @@ export const Page = () => {
 
   useEffect(() => {
     getComments(sectionId);
-  }, []);
+  }, [status]);
 
   const handleText = (t) => {
     setText(t);
@@ -56,7 +58,7 @@ export const Page = () => {
         createdAt: new Date(),
       })
       .then(() => {
-        window.location.reload();
+        setStatus(true);
       });
   };
 
@@ -67,6 +69,7 @@ export const Page = () => {
           padding: "4px",
           height: "100%",
           overflow: "auto",
+          background: theme.palette.primary[50],
         }}
       >
         <Box>
@@ -78,7 +81,7 @@ export const Page = () => {
             <CodeMirror
               theme={oneDark}
               value={code}
-              width="400px"
+              width="440px"
               extensions={[javascript({ jsx: true })]}
             />
           </Box>
