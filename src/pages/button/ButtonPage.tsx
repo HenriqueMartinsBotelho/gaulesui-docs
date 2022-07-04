@@ -56,7 +56,7 @@ export const Page = () => {
         createdAt: new Date(),
       })
       .then(() => {
-        window.location.reload(true);
+        window.location.reload();
       });
   };
 
