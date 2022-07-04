@@ -25,7 +25,6 @@ export const Page = () => {
   const [comments, setComments] = useState<any>([]);
   const sectionId = "62bb4984bb18015a28a89df9";
   const [text, setText] = useState("");
-  const [status, setStatus] = useState(0);
 
   const getComments = async (id: string) => {
     axios
@@ -40,79 +39,92 @@ export const Page = () => {
 
   useEffect(() => {
     getComments(sectionId);
-  }, [status]);
+  }, []);
 
   const handleText = (t) => {
     setText(t);
   };
 
   const handleComment = () => {
-    axios.patch(`${apiURL}/comments/create/${sectionId}`, {
-      comment_id: uuidv4(),
-      body: text,
-      username: "Jack",
-      userId: "abc1",
-      parentId: null,
-      createdAt: new Date(),
-    });
-    setStatus((s) => s + 1);
+    axios
+      .patch(`${apiURL}/comments/create/${sectionId}`, {
+        comment_id: uuidv4(),
+        body: text,
+        username: "Jack",
+        userId: "abc1",
+        parentId: null,
+        createdAt: new Date(),
+      })
+      .then(() => {
+        window.location.reload(true);
+      });
   };
 
   return (
     <LayoutBaseDePagina titulo="GaulesUI" barraDeFerramentas={<></>}>
-      <Box>
-        <Box style={{ fontSize: "20px", marginBottom: "10px" }}>
-          Exemplo de uso
-        </Box>
+      <Box
+        style={{
+          padding: "4px",
+          height: "100%",
+          overflow: "auto",
+        }}
+      >
+        <Box>
+          <Box style={{ fontSize: "20px", marginBottom: "10px" }}>
+            Exemplo de uso
+          </Box>
 
-        <Box marginTop="10px">
-          <CodeMirror
-            theme={oneDark}
-            value={code}
-            width="400px"
-            extensions={[javascript({ jsx: true })]}
-          />
-        </Box>
-        <Box marginTop="10px" display="flex">
-          <Button label="Botão" />
-        </Box>
-      </Box>
-      <Box>
-        {/* <Comments currentUserId="1" sectionId="62ba040573190e28887df980"/> */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-          <textarea
-            style={{ width: "100%", height: "100px", marginTop: "30px" }}
-            onChange={(t) => handleText(t.target.value)}
-          />
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <button
-              style={{
-                // width: "130px",
-                padding: "10px",
-                background: "#282C34",
-                color: "#FA00FF",
-                // fontWeight: "bold",
-                borderRadius: "8px",
-                border: "none",
-                cursor: "pointer",
-              }}
-              onClick={() => handleComment()}
-            >
-              Publicar
-            </button>
-            <div>ID: {sectionId}</div>
-          </div>
-        </div>
-        {comments.map((comment) => (
-          <div key={comment.comment_id}>
-            <Comment
-              username={comment.username}
-              commentId={comment.comment_id}
-              createdAt={comment.createdAt}
-              body={comment.body}
+          <Box marginTop="10px">
+            <CodeMirror
+              theme={oneDark}
+              value={code}
+              width="400px"
+              extensions={[javascript({ jsx: true })]}
             />
+          </Box>
+          <Box marginTop="10px" display="flex">
+            <Button label="Botão" />
+          </Box>
+        </Box>
+        <Box>
+          {/* <Comments currentUserId="1" sectionId="62ba040573190e28887df980"/> */}
+          <br /> <hr /> <br />
+          <h2>Comentários</h2>
+          {comments.map((comment) => (
+            <div key={comment.comment_id}>
+              <Comment
+                username={comment.username}
+                commentId={comment.comment_id}
+                createdAt={comment.createdAt}
+                body={comment.body}
+              />
+            </div>
+          ))}
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            <textarea
+              style={{ width: "100%", height: "100px", marginTop: "30px" }}
+              onChange={(t) => handleText(t.target.value)}
+            />
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <button
+                style={{
+                  // width: "130px",
+                  padding: "10px",
+                  background: "#282C34",
+                  color: "#FA00FF",
+                  // fontWeight: "bold",
+                  borderRadius: "8px",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+                onClick={() => handleComment()}
+              >
+                Publicar
+              </button>
+              <div>ID: {sectionId}</div>
+            </div>
           </div>
-        ))}
+        </Box>
       </Box>
     </LayoutBaseDePagina>
   );

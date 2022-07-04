@@ -3,19 +3,21 @@ import { AppThemeProvider } from "./shared/contexts/ThemeContext";
 import { AppRoutes } from "./routes";
 import { MenuLateral } from "./shared/components";
 import { DrawerProvider } from "./shared/contexts";
-import './global.css'
+// import './global.css'
 
-const App = () => {
+
+function App() {
   return (
     <AppThemeProvider>
-      <DrawerProvider>
-        <BrowserRouter>
-          <MenuLateral>
-            <AppRoutes />
-          </MenuLateral>
-        </BrowserRouter>
-      </DrawerProvider>
-    </AppThemeProvider>
-  );
-};
-export default App;
+    <DrawerProvider>
+      <BrowserRouter>
+        <MenuLateral>
+          <AppRoutes />
+        </MenuLateral>
+      </BrowserRouter>
+    </DrawerProvider>
+  </AppThemeProvider>
+  )
+}
+
+export default App

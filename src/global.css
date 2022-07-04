@@ -1,23 +1,24 @@
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  /* background-color: #202124; */
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  /* background-color: #202124; */
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: #fff;
-  background-image: -webkit-gradient(
-    linear,
-    40% 0%,
-    75% 84%,
-    from(	#ff00ff),
-    to(#ff00cc),
-    color-stop(0.6, #9900ff)
-  );
-}
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    /* background-color: #202124; */
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+    /* background-color: #202124; */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #fff;
+    background-image: -webkit-gradient(
+      linear,
+      40% 0%,
+      75% 84%,
+      from(	#ff00ff),
+      to(#ff00cc),
+      color-stop(0.6, #9900ff)
+    );
+  }
+  
