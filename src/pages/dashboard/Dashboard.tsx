@@ -76,7 +76,7 @@ export const Dashboard = () => {
           </Box>
           <Box marginTop="10px"></Box>
         </Box>
-        <Box style={{ marginTop: "20px" }}>
+        <Box style={{ marginTop: "21px" }}>
           <Box
             style={{
               fontSize: "20px",

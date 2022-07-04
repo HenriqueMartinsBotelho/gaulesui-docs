@@ -8,8 +8,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "@codemirror/lang-javascript": "^6.0.0",
     "@codemirror/theme-one-dark": "^6.0.0",
     "@emotion/react": "^11.9.0",
@@ -27,6 +25,8 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "gaulesui_lib": "^0.1.20",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.7.2",
@@ -36,6 +36,7 @@
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/uuid": "^8.3.4",
     "@vitejs/plugin-react": "^1.3.0",
     "typescript": "^4.6.3",
     "vite": "^2.9.9"
